@@ -3,12 +3,14 @@ import matplotlib
 def insertionSort(list):
 
     listSorted = list
+    sortedNumber = int(0)
 
     for i in range(0,len(listSorted) - 1)
-        if i < i-1
-            for
+        if listSorted[i] < listSorted[i-1]
+            for 
         
-        
+
+
 
 
 
