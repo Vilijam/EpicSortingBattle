@@ -2,13 +2,16 @@ import matplotlib
 
 def insertionSort(list):
 
-    listSorted = list
-    sortedNumber = int(0)
+    listSorted = list.copy()
+    switchedString = None
 
     for i in range(0,len(listSorted) - 1)
         if listSorted[i] < listSorted[i-1]
-            for 
-        
+            switchedString = listSorted[i]
+            listSorted[i] = listSorted[i-1] 
+            listSorted[i-1] = switchedString
+
+    return listSorted
 
 
 
@@ -23,7 +26,6 @@ def selectionSort(list):
 
 
 def bubbleSort(list):
-    def bubbleSort(list):
 	templist = list.copy()
 	tempChar = None
 	num = 1
