@@ -3,22 +3,19 @@ import matplotlib
 def insertionSort(list):
 
     listSorted = list.copy()
-    switchedString = None
-
-    for i in range(0,len(listSorted) - 1)
-        if listSorted[i] < listSorted[i-1]
-            switchedString = listSorted[i]
-            listSorted[i] = listSorted[i-1] 
-            listSorted[i-1] = switchedString
+    
+    for i in range(1, len(listSorted)):
+        if listSorted[i] < listSorted[i-1]:
+            numberSorted = i
+            while listSorted[numberSorted] < listSorted[numberSorted-1]:
+                switchedString = listSorted[numberSorted]
+                listSorted[numberSorted] = listSorted[numberSorted-1] 
+                listSorted[numberSorted-1] = switchedString
+                numberSorted = numberSorted - 1
+                if numberSorted == 0:
+                    break
 
     return listSorted
-
-
-
-
-
-    pass
-
 
 def selectionSort(list):
 
