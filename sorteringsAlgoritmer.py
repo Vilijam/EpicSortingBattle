@@ -36,5 +36,56 @@ def bubbleSort(list):
 
 
 def mergeSort(list):
+    templist = list.copy()
+    currentlist = templist.copy()
+    secondarylist = []
+    sortedlist = []
+    res = split(currentlist)
+    currentlist = res[0]
+    secondarylist = res[1]
 
-    pass
+    if len(currentlist) == 1:
+        sortedlist = merge(currentlist, secondarylist)
+
+    if len(list) == len(sortedlist):
+        return sortedlist
+    else:
+        list1 = mergeSort(currentlist)
+        list2 = mergeSort(secondarylist)
+        sortedlist = merge(list1, list2)
+        return sortedlist
+
+def split(list):
+    templist = list.copy()
+    list1 = []
+    list2 = []
+    length = len(templist)/2
+    e = 0
+    while e < length:
+        list1.append(templist[0])
+        del templist[0]
+        e += 1
+    while len(templist) > 0:
+        list2.append(templist[0])
+        del templist[0]
+    return list1, list2
+
+	
+def merge(list1, list2):
+    listMerged = []
+    templist1 = list1.copy()
+    templist2 = list2.copy()
+    while len(templist1)>0 and len(templist2)>0:
+        if templist1[0]<templist2[0]:
+            listMerged.append(templist1[0])
+            del templist1[0]
+        else:
+            listMerged.append(templist2[0])
+            del templist2[0]
+    if len(templist1)>0:
+        for e in range(len(templist1)):
+            listMerged.append(templist1[e])
+    else:
+        for e in range(len(templist2)):
+            listMerged.append(templist2[e])
+    return listMerged
