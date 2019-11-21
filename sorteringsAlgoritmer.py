@@ -19,7 +19,23 @@ def insertionSort(list):
 
 def selectionSort(list):
 
-    pass
+    tempList = list.copy()
+    lowNumID = 0
+        
+    for e in range(0, len(tempList)):
+        lowNum = tempList[e]
+        lowNumID = e
+
+        for i in range(e, len(tempList)):
+            if tempList[i] < lowNum:
+                lowNum = tempList[i]
+                lowNumID = i
+
+        tempChar = tempList[e]
+        tempList[e] = tempList[lowNumID] 
+        tempList[lowNumID] = tempChar
+
+    return tempList
 
 
 def bubbleSort(list):
