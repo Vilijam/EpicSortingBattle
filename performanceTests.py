@@ -15,7 +15,7 @@ def runTestCase(filename):
     except:
         print('Kunne ikke finde testfiler. Prøver at generere.')
         testDataGenerator.generate()
-        runTestCase()
+        runTestCase(filename)
 
     try:
         print('Starter Select Sort')

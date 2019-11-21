@@ -1,5 +1,3 @@
-import matplotlib
-
 def insertionSort(list):
 
     #Kopier liste til sortering.
