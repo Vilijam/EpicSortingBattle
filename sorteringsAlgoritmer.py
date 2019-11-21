@@ -2,16 +2,23 @@ import matplotlib
 
 def insertionSort(list):
 
+    #Kopier liste til sortering.
     tempList = list.copy()
     
+    #Går i gennem hvert element i listen, bortset fra det første, da funktionen sammenligner baglæns, og der er ikke noget element bag det første.
     for i in range(1, len(tempList)):
+        #Sammenligner baglæns.
         if tempList[i] < tempList[i-1]:
+            #Gemmer det tal, som bryder sorteringen
             num = i
+            #Denne while-løkke skifter tal, så længe "num" er mindre end det tal bag det.
             while tempList[num] < tempList[num-1]:
                 tempChar = tempList[num]
                 tempList[num] = tempList[num-1] 
                 tempList[num-1] = tempChar
+                #Efter hvert skift skal sammenligningspunktet rykkes et element tilbage. Det gør denne operation.
                 num = num - 1
+                #Sikre at sammenligningspunktet ikke bliver negativt, når listen er sorteret.
                 if num == 0:
                     break
 
@@ -19,18 +26,25 @@ def insertionSort(list):
 
 def selectionSort(list):
 
+    #Kopier liste til sortering.
     tempList = list.copy()
-    lowNumID = 0
         
+    #for-løkke til at sortere hvert element i listen.
     for e in range(0, len(tempList)):
+
+        #Definerer, og nulstiller efter forrige sortering, variable til laveste usorteret element.
         lowNum = tempList[e]
         lowNumID = e
 
+        #Sammenligner hvert element med alle andre usorterede elementer.
         for i in range(e, len(tempList)):
+
+            #if-løkke til at finde det laveste usorterede element
             if tempList[i] < lowNum:
                 lowNum = tempList[i]
                 lowNumID = i
 
+        #Skifter det laveste usorterede element og det element, som det bliver sammenlignet med. 
         tempChar = tempList[e]
         tempList[e] = tempList[lowNumID] 
         tempList[lowNumID] = tempChar
@@ -39,7 +53,7 @@ def selectionSort(list):
 
 
 def bubbleSort(list):
-    #Først kopierer jeg listen der skal sorteres og opretter variable der skal bruges under sortering.
+    #Først kopierer jeg listen der skal sorteres, og opretter variable der skal bruges under sortering.
 	templist = list.copy()
 	tempChar = None
 	num = 1
