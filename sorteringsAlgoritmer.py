@@ -60,22 +60,28 @@ def bubbleSort(list):
 
 
 def mergeSort(list):
+    #Først opretter jeg variable til funktionen, en kopi af listen der skal sorteres, en liste der er sorteret og en liste der kan samles med templist
     templist = list.copy()
     secondarylist = []
     sortedlist = []
+    #Så splittes templist, og templist og secondarylist sættes nu til hver af de to nye lister
     res = split(templist)
     templist = res[0]
     secondarylist = res[1]
-
+    #Nu bruges en if-sætning, som tjekker om længden af templist er lig 1
     if len(templist) == 1:
+        #Hvis dette er tilfældet må listen være sorteret, og også secondarylist, siden de er lige lange
+        #Derfor samles de nu med merge, og sortedlist sættes nu til dette.
         sortedlist = merge(templist, secondarylist)
-
+    #Nu tjekkes om længden af den sorterede liste er lig med længden på listen der skulle sorteres. Hvis dette passer returneres den sorterede liste
     if len(list) == len(sortedlist):
         return sortedlist
+    #Ellers kalder man mergeSort på hver af de to lister, templist og secondary list, samler dem, og gemmer dem i den sorterede liste
     else:
         list1 = mergeSort(templist)
         list2 = mergeSort(secondarylist)
         sortedlist = merge(list1, list2)
+        #Til sidst returneres den sorterede liste
         return sortedlist
 
 def split(list):
