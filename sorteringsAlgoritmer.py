@@ -2,20 +2,20 @@ import matplotlib
 
 def insertionSort(list):
 
-    listSorted = list.copy()
+    tempList = list.copy()
     
-    for i in range(1, len(listSorted)):
-        if listSorted[i] < listSorted[i-1]:
-            numberSorted = i
-            while listSorted[numberSorted] < listSorted[numberSorted-1]:
-                switchedString = listSorted[numberSorted]
-                listSorted[numberSorted] = listSorted[numberSorted-1] 
-                listSorted[numberSorted-1] = switchedString
-                numberSorted = numberSorted - 1
-                if numberSorted == 0:
+    for i in range(1, len(tempList)):
+        if tempList[i] < tempList[i-1]:
+            num = i
+            while tempList[num] < tempList[num-1]:
+                tempChar = tempList[num]
+                tempList[num] = tempList[num-1] 
+                tempList[num-1] = tempChar
+                num = num - 1
+                if num == 0:
                     break
 
-    return listSorted
+    return tempList
 
 def selectionSort(list):
 
