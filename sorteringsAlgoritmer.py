@@ -39,16 +39,23 @@ def selectionSort(list):
 
 
 def bubbleSort(list):
+    #Først kopierer jeg listen der skal sorteres og opretter variable der skal bruges under sortering.
 	templist = list.copy()
 	tempChar = None
 	num = 1
+    #Jeg laver her to for-løkker, en der kører for hver gang man skal kører listen igennem, 
 	for e in range(len(templist)-1):
+        #Og en for den mængde elementer den skal sammenligne med hinanden
 		for e in range(len(templist)-num):
+            #Her er en if-sætning som tjekker om elementet der kigges på er større end elementet der har en højere key.
+            #Hvis dette passer byttes deres plads
 			if templist[e+1]<templist[e]:
 				tempChar = templist[e]
 				templist[e] = templist[e+1]
 				templist[e+1] = tempChar
+        #Til sidst lægges 1 til variablen num, som er med til at bestemme hvor mange elementer der skal tjekkes hver gang listen løbes igennem
 		num += 1
+    #Til sidst returneres den sorterede liste
 	return templist
 
 
