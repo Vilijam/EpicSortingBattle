@@ -61,20 +61,19 @@ def bubbleSort(list):
 
 def mergeSort(list):
     templist = list.copy()
-    currentlist = templist.copy()
     secondarylist = []
     sortedlist = []
-    res = split(currentlist)
-    currentlist = res[0]
+    res = split(templist)
+    templist = res[0]
     secondarylist = res[1]
 
-    if len(currentlist) == 1:
-        sortedlist = merge(currentlist, secondarylist)
+    if len(templist) == 1:
+        sortedlist = merge(templist, secondarylist)
 
     if len(list) == len(sortedlist):
         return sortedlist
     else:
-        list1 = mergeSort(currentlist)
+        list1 = mergeSort(templist)
         list2 = mergeSort(secondarylist)
         sortedlist = merge(list1, list2)
         return sortedlist
