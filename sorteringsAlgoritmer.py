@@ -49,7 +49,6 @@ def selectionSort(list):
 
     return tempList
 
-
 def bubbleSort(list):
     #Først kopierer jeg listen der skal sorteres, og opretter variable der skal bruges under sortering.
 	templist = list.copy()
